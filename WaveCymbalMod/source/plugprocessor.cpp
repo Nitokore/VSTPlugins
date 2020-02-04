@@ -38,7 +38,6 @@ tresult PLUGIN_API PlugProcessor::initialize(FUnknown *context)
   tresult result = AudioEffect::initialize(context);
   if (result != kResultTrue) return result;
 
-  addAudioInput(STR16("OscillatorInput"), Vst::SpeakerArr::kMono);
   addAudioInput(STR16("ExcitorInput"), Vst::SpeakerArr::kMono);
   addAudioInput(STR16("CymbalInput"), Vst::SpeakerArr::kMono);
 
@@ -124,11 +123,10 @@ tresult PLUGIN_API PlugProcessor::process(Vst::ProcessData &data)
   } else {
     float *in0 = data.inputs[0].channelBuffers32[0];
     float *in1 = data.inputs[1].channelBuffers32[0];
-    float *in2 = data.inputs[2].channelBuffers32[0];
     float *out0 = data.outputs[0].channelBuffers32[0];
     float *out1 = data.outputs[1].channelBuffers32[0];
     float *out2 = data.outputs[2].channelBuffers32[0];
-    dsp.process((size_t)data.numSamples, in0, in1, in2, out0, out1, out2);
+    dsp.process((size_t)data.numSamples, in0, in1, out0, out1, out2);
   }
 
   return kResultOk;

@@ -114,7 +114,6 @@ void DSPCore::process(
   const size_t length,
   const float *in0,
   const float *in1,
-  const float *in2,
   float *out0,
   float *out1,
   float *out2)
@@ -158,7 +157,7 @@ void DSPCore::process(
     else
       out1[i] = out0[i];
 
-    out2[i] = cymbal.process(out1[i], collision);
+    out2[i] = cymbal.process(out1[i] + in1[i], collision);
 
     const float masterGain = interpMasterGain.process();
     out0[i] *= masterGain;

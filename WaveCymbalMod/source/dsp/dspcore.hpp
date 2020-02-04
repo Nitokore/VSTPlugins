@@ -49,7 +49,6 @@ public:
     const size_t length,
     const float *in0,
     const float *in1,
-    const float *in2,
     float *out0,
     float *out1,
     float *out2);
