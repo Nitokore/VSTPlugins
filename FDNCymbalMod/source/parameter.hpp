@@ -178,7 +178,7 @@ struct GlobalParameter {
       ID::stickVelvetMix);
 
     value[ID::smoothness] = std::make_unique<LogValue>(
-      0.1, Scales::smoothness, "smoothness", Info::kCanAutomate, ID::smoothness);
+      0.0, Scales::smoothness, "smoothness", Info::kCanAutomate, ID::smoothness);
 
     value[ID::gain] = std::make_unique<LogValue>(
       0.5, Scales::gain, "gain", Info::kCanAutomate, ID::gain);
