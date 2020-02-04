@@ -261,8 +261,7 @@ void DSPCore::noteOn(int32_t noteId, int16_t pitch, float tuning, float velocity
   }
 
   // Set fdnCascade.
-  if (param.value[ParameterID::retriggerTime]->getInt())
-    rng.seed = param.value[ParameterID::seed]->getInt();
+  if (param.value[ParameterID::retriggerTime]->getInt()) rng.seed = seed;
 
   const float fdnTime = param.value[ParameterID::fdnTime]->getFloat();
   for (size_t n = 0; n < fdnCascade.size(); ++n) {
