@@ -22,11 +22,12 @@
 #include "pluginterfaces/vst/ivstaudioprocessor.h"
 #include "public.sdk/source/main/pluginfactory.h"
 
+#include "plugprocessor.hpp" // This comes first because including `logger.hpp`.
+
 #include "editor.hpp"
 #include "fuid.hpp"
 #include "parameter.hpp"
 #include "plugcontroller.hpp"
-#include "plugprocessor.hpp"
 #include "version.hpp"
 
 namespace Steinberg {
