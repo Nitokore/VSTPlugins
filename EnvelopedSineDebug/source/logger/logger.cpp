@@ -19,7 +19,6 @@
 
 #include <chrono>
 #include <cstdlib>
-#include <fstream>
 #include <iostream>
 
 std::ofstream Logger::ofs;
@@ -31,7 +30,7 @@ inline fs::path getLogDir()
   if (appdataDir != nullptr) return fs::path(appdataDir);
 
   std::cerr << "%AppData% is empty.\n";
-#else
+#elif
   const char *home = std::getenv("HOME");
   if (home != nullptr) return fs::path(home);
 
@@ -49,7 +48,7 @@ void Logger::open()
     return;
   }
 
-  logPath /= fs::path("UhhyouDebug.log");
+  logPath /= fs::path("EnvelopedSineDebug.log");
 
   if (ofs.is_open()) ofs.close();
   ofs.open(logPath, std::ios::app);
