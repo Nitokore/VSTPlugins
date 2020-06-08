@@ -19,6 +19,7 @@
 
 #include <chrono>
 #include <cstdlib>
+#include <fstream>
 #include <iostream>
 
 std::ofstream Logger::ofs;
@@ -30,7 +31,7 @@ inline fs::path getLogDir()
   if (appdataDir != nullptr) return fs::path(appdataDir);
 
   std::cerr << "%AppData% is empty.\n";
-#elif
+#else
   const char *home = std::getenv("HOME");
   if (home != nullptr) return fs::path(home);
 
